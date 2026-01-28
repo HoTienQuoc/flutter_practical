@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/dice_roller.dart';
 import 'package:flutter_application/styled_text.dart';
 
 const startAlignment = Alignment.topLeft;
@@ -18,13 +19,6 @@ class GradientContainer extends StatelessWidget {
   : colors = const [Colors.deepPurple, Colors.indigo]; // Second constructor
   final List<Color> colors;
 
-  var activeDiceImage = "assets/images/dice-1.png";
-
-  void rollDice() {
-    activeDiceImage = "assets/images/dice-2.png";
-    print("Changing Dice Image");
-  }
-
   @override
   // Called for you, automatically, by Flutter
   // (when it renders the user interface)
@@ -41,27 +35,7 @@ class GradientContainer extends StatelessWidget {
           end: endAlignment,
         ),
       ),
-      child: Center(
-        child: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            StyledText('Hello World!'),
-            SizedBox(height: 16), // khoảng cách giữa 2 dòng
-            Image.asset(activeDiceImage, width: 200),
-            SizedBox(height: 16),
-            TextButton(
-              onPressed: rollDice,
-              style: TextButton.styleFrom(
-                // padding: const EdgeInsets.only(top: 20),
-                foregroundColor: Colors.white,
-                textStyle: const TextStyle(fontSize: 28),
-              ),
-              child: const Text('Roll Dice'),
-            ),
-          ],
-        ),
-      ),
+      child: Center(child: DiceRoller()),
     );
   }
 }
