@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/dice_roller.dart';
-import 'package:flutter_application/styled_text.dart';
 
 const startAlignment = Alignment.topLeft;
 const endAlignment = Alignment.bottomRight;
@@ -11,9 +10,12 @@ class GradientContainer extends StatelessWidget {
   //   // initialization work
   // }
   // GradientContainer({key}) : super(key: key);
-  GradientContainer({super.key, required this.colors}); // First constructor
+  const GradientContainer({
+    super.key,
+    required this.colors,
+  }); // First constructor
 
-  GradientContainer.purple({
+  const GradientContainer.purple({
     super.key,
   }) //🧩 Đây là constructor có tên (named constructor)
   : colors = const [Colors.deepPurple, Colors.indigo]; // Second constructor
